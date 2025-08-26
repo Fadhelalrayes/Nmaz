@@ -1,305 +1,565 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تعليم الصلاة وفق المذهب الجعفري</title>
-  <meta name="description" content="منصّة أكاديمية تفاعلية لتعليم الصلاة وفق المذهب الجعفري، مع مصادر موثوقة من موقع مكتب السيد السيستاني، وتاريخ هجري/ميلادي.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع احترافي - تصميم عصري</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- أمان أساسي لصفحة ثابتة على GitHub Pages -->
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' data:; style-src 'self' 'nonce-r4nd0m123'; script-src 'self' 'nonce-r4nd0m123'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
-  <meta http-equiv="Referrer-Policy" content="no-referrer">
-  <meta http-equiv="Permissions-Policy" content="geolocation=()">
-  <meta name="color-scheme" content="light">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-  <style nonce="r4nd0m123">
-    :root{
-      --bg-grad-1:#F6FAFF; --bg-grad-2:#FDFEFF;
-      --primary:#2B7A78; --primary-50:#D7EFEE; --primary-20:#EFF9F8;
-      --accent:#6EC1E4; --ink:#1C2333; --ink-2:#5A6371; --card:#ffffff;
-      --ring: rgba(43,122,120,.25);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: system-ui, -apple-system, "Segoe UI", "Noto Naskh Arabic", "Cairo", "IBM Plex Sans Arabic", sans-serif;
-      color:var(--ink);
-      background: linear-gradient(180deg,var(--bg-grad-1),var(--bg-grad-2));
-      /* مساحة افتراضية أسفل المحتوى تُستبدَل في الجوال داخل الميديا كويري */
-      padding-bottom: 0;
-    }
-    a{color:var(--primary); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px; margin:0 auto; padding:1.2rem}
-    header{
-      background: linear-gradient(90deg, var(--primary-20), #fff);
-      border-bottom:1px solid #e6eef2;
-      position:sticky; top:0; z-index:10;
-    }
-    .head{
-      display:flex; align-items:center; gap:1rem; justify-content:space-between;
-      padding:.6rem 0;
-    }
-    .brand{display:flex; align-items:center; gap:.8rem}
-    .logo{
-      width:40px; height:40px; border-radius:12px;
-      background: radial-gradient(circle at 30% 30%, var(--accent), var(--primary));
-      box-shadow: 0 4px 14px rgba(0,0,0,.1);
-    }
-    .title{margin:0; font-size:1.25rem}
-    .datetimes{
-      display:flex; align-items:center; gap:1.2rem; color:var(--ink-2); font-size:.95rem;
-    }
-    .pill{background:var(--primary-20); padding:.3rem .6rem; border-radius:999px}
+        /* خلفية متحركة بتدرج لوني */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
 
-    main{display:flex; gap:1.2rem; min-height:calc(100vh - 120px)}
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    /* الشريط الجانبي الأيمن (أزرار على اليمين لسطح المكتب) */
-    .side-actions{
-      position:sticky; top:88px; align-self:flex-start;
-      display:flex; flex-direction:column; gap:.6rem; width:180px;
-    }
-    .action{
-      display:block; background:var(--card); border:1px solid #e8eef3;
-      border-radius:14px; padding:.7rem .9rem; text-align:center; font-weight:700;
-      box-shadow:0 4px 16px rgba(0,0,0,.04);
-      transition:transform .15s ease, box-shadow .15s ease;
-    }
-    .action:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+        /* شريط التنقل */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-    /* المحتوى */
-    .content{flex:1}
-    section{
-      background:var(--card); border:1px solid #e8eef3; border-radius:18px;
-      padding:1rem; margin-bottom:1rem; box-shadow:0 8px 24px rgba(0,0,0,.05);
-    }
-    section h2{margin-top:.2rem}
-    .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:.8rem}
-    .card{border:1px solid #edf2f6; border-radius:14px; padding:.9rem; background:#fff}
-    .card h3{margin:.2rem 0 .4rem 0; font-size:1rem}
-    .tip{background:#f8fbff; border:1px dashed #d7e7f6; padding:.6rem; border-radius:10px; color:#224}
-    .source{font-size:.85rem; color:var(--ink-2)}
-    footer{margin-top:1rem; padding:1rem 0; color:var(--ink-2); font-size:.92rem}
-    .src-list{display:grid; grid-template-columns:repeat(2,1fr); gap:.5rem}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-    /* الجوال: الأزرار تتحول إلى شريط سفلي ثابت لا يتداخل مع المتصفح */
-    @media (max-width: 980px){
-      /* نرفع المحتوى لأعلى حتى لا يحجبه الشريط السفلي */
-      body{ padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-      .cards{grid-template-columns:1fr}
-      main{flex-direction:column}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-      .side-actions{
-        position:fixed; inset:auto 0 0 0; /* left:0; right:0; bottom:0 */
-        top:auto; z-index:50;
-        flex-direction:row; gap:.5rem; width:auto;
-        padding: .5rem calc(.6rem + env(safe-area-inset-right, 0px)) calc(.5rem + env(safe-area-inset-bottom, 0px)) calc(.6rem + env(safe-area-inset-left, 0px));
-        background:rgba(255,255,255,.92);
-        backdrop-filter: blur(8px);
-        border-top:1px solid #e6eef2;
-        overflow-x:auto; overflow-y:hidden;
-      }
-      .action{
-        flex:0 0 auto; white-space:nowrap;
-        border-radius:999px; padding:.55rem .9rem;
-        box-shadow:none;
-      }
-    }
-  </style>
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 4px 20px rgba(255,255,255,0.3); }
+            to { text-shadow: 0 4px 30px rgba(255,255,255,0.6); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #feca57, #ff6b6b);
+        }
+
+        /* الأشكال المتحركة */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* قسم الخدمات */
+        .services {
+            padding: 5rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 3rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* قسم المعرض */
+        .gallery {
+            padding: 5rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        /* التذييل */
+        .footer {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: #feca57;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* تأثيرات إضافية */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* تأثير الجسيمات */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: particleFloat 8s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <div class="container head" role="banner" aria-label="ترويسة الموقع">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <h1 class="title">تعليم الصلاة وفق المذهب الجعفري</h1>
-    </div>
+    <!-- الخلفية المتحركة -->
+    <div class="animated-bg"></div>
+    
+    <!-- الجسيمات المتحركة -->
+    <div class="particles" id="particles"></div>
 
-    <!-- التاريخين فقط -->
-    <div class="datetimes" aria-live="polite">
-      <div class="pill" id="gregorian">التاريخ الميلادي: ...</div>
-      <div class="pill" id="hijri">التاريخ الهجري: ...</div>
-    </div>
-  </div>
-</header>
-
-<div class="container">
-  <main>
-    <!-- الأزرار: يمين في الديسكتوب / شريط سفلي ثابت في الجوال -->
-    <aside class="side-actions" aria-label="التنقل السريع">
-      <a class="action" href="#start">ابدأ التعلّم</a>
-      <a class="action" href="#purity">الطهارة</a>
-      <a class="action" href="#wudu">الوضوء</a>
-      <a class="action" href="#prayers">الصلوات اليومية</a>
-      <a class="action" href="#mistakes">مبطلات وأخطاء</a>
-      <a class="action" href="#faq">الأسئلة الشائعة</a>
-      <a class="action" href="#sources">المراجع</a>
-    </aside>
-
-    <div class="content">
-      <section id="start" tabindex="-1">
-        <h2>مسار تعلّم أكاديمي مبسّط</h2>
-        <p>هذه المنصّة التعليمية تشرح الصلاة وفق المذهب الجعفري بأسلوب واضح وتدريجي، مع الاعتماد على <strong>الموقع الرسمي لمكتب سماحة السيد علي السيستاني</strong> للمسائل الفقهية.</p>
-      </section>
-
-      <section id="purity" tabindex="-1">
-        <h2>الطهارة: المدخل الأول للصلاة</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>النية وآداب الطهارة</h3>
-            <p>تُشرع النية والإخلاص لله تعالى، والتحفّظ على طهارة الماء والمكان والبدن.</p>
-            <div class="tip">تلميح: راجع فقرات كتاب الطهارة في “منهاج الصالحين”.</div>
-            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720" target="_blank" rel="noopener">منهاج الصالحين – كتاب الطهارة</a></div>
-          </div>
-          <div class="card">
-            <h3>أنواع الطهارة</h3>
-            <ul>
-              <li><strong>الوضوء</strong> للصلاة ونحوها.</li>
-              <li><strong>الغُسل</strong> بأنواعه (ومنها غسل الجنابة).</li>
-              <li><strong>التيمم</strong> عند تعذّر الماء أو تعسّره.</li>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">✨ موقعي الاحترافي</div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#gallery">المعرض</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
             </ul>
-            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720/3619/" target="_blank" rel="noopener">غايات الوضوء</a></div>
-          </div>
         </div>
-      </section>
+    </nav>
 
-      <section id="wudu" tabindex="-1">
-        <h2>الوضوء (الواجبات بإيجاز)</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>أجزاء الوضوء</h3>
-            <ol>
-              <li>غَسل الوجه.</li>
-              <li>غَسل اليد اليمنى ثم اليسرى من <em>المِرفق إلى أطراف الأصابع</em>.</li>
-              <li>مسح مقدّم الرأس بالرطوبة الباقية.</li>
-              <li>مسح ظاهر القدمين بالرطوبة الباقية.</li>
-            </ol>
-            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720/4782/" target="_blank" rel="noopener">أجزاء الوضوء</a>، <a href="https://www.sistani.org/arabic/book/22/1691/" target="_blank" rel="noopener">التعليقة على العروة الوثقى – أفعال الوضوء</a></div>
-          </div>
-          <div class="card">
-            <h3>شروط مختصرة</h3>
-            <ul>
-              <li>طهارة الماء ومباحيته وإطلاقه.</li>
-              <li>طهارة أعضاء الوضوء حال الغَسل/المسح.</li>
-              <li>الترتيب من الأعلى إلى الأسفل في الغَسل.</li>
-            </ul>
-            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/24/1833/" target="_blank" rel="noopener">الوجيز – الوضوء وشروطه</a>, <a href="https://www.sistani.org/arabic/book/22/1692/" target="_blank" rel="noopener">شرائط الوضوء</a></div>
-          </div>
-          <div class="card">
-            <h3>تذكير عام</h3>
-            <p>يُستحب بعض الآداب كالسواك، وغسل اليدين قبل الاغتراف، والمضمضة والاستنشاق.</p>
-            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/22/1689/" target="_blank" rel="noopener">بعض مستحبات الوضوء</a></div>
-          </div>
-          <div class="card">
-            <h3>متى يجب الوضوء؟</h3>
-            <p>للصلوات الواجبة (عدا صلاة الميت)، ولأجزاء الصلاة المنسية حسب التفصيل، وللطواف الواجب…</p>
-            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/13/528/" target="_blank" rel="noopener">موارد وجوب الوضوء</a></div>
-          </div>
+    <!-- القسم الرئيسي -->
+    <section class="hero" id="home">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
         </div>
-      </section>
-
-      <section id="prayers" tabindex="-1">
-        <h2>الصلوات اليومية (فجر، ظهر، عصر، مغرب، عشاء)</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>الخطوات العامة</h3>
-            <ul>
-              <li>النية → تكبيرة الإحرام → القراءة → الركوع → السجودان → التشهّد/التسليم بحسب الركعات.</li>
-              <li>تذكير: الأذان والإقامة مستحبان مؤكدان.</li>
-            </ul>
-            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720" target="_blank" rel="noopener">منهاج الصالحين – كتاب الصلاة</a></div>
-          </div>
-          <div class="card">
-            <h3>تحقّق فهم (قصير)</h3>
-            <p>بعد تعلّمك أركان الصلاة، أجب لنفسك: ماذا تبطل به الصلاة؟ كيف تعالج الشك؟</p>
-            <div class="source">المصدر: <a href="https://www.sistani.org/english/book/48/2247/" target="_blank" rel="noopener">مبطلات الصلاة (EN)</a>، <a href="https://www.sistani.org/arabic/book/22/1679/" target="_blank" rel="noopener">تفصيلات فقهية</a></div>
-          </div>
+        <div class="hero-content">
+            <h1 class="pulse">مرحباً بك في عالم الإبداع</h1>
+            <p>نحن نقدم تصاميم احترافية وحلول رقمية متطورة تلبي احتياجاتك وتحقق أهدافك</p>
+            <a href="#services" class="cta-button">اكتشف خدماتنا</a>
         </div>
-      </section>
+    </section>
 
-      <section id="mistakes" tabindex="-1">
-        <h2>مبطلات وأخطاء شائعة</h2>
-        <div class="card">
-          <ul>
-            <li>انتقاض الطهارة أثناء الصلاة.</li>
-            <li>الإخلال بالترتيب أو الأذكار الواجبة.</li>
-            <li>الجهل بالنجاسة على البدن/الثوب له تفاصيل خاصة.</li>
-          </ul>
-          <div class="source">المصدر: <a href="https://www.sistani.org/english/book/48/2247/" target="_blank" rel="noopener">مبطلات الصلاة</a>, <a href="https://www.sistani.org/arabic/book/22/1679/" target="_blank" rel="noopener">تفصيلات فقهية</a></div>
+    <!-- قسم الخدمات -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا المميزة</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>التصميم الإبداعي</h3>
+                    <p>نقدم تصاميم مبتكرة وجذابة تعكس هويتك وتجذب عملاءك</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💻</span>
+                    <h3>تطوير المواقع</h3>
+                    <p>مواقع إلكترونية احترافية ومتجاوبة مع جميع الأجهزة</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📱</span>
+                    <h3>تطبيقات الجوال</h3>
+                    <p>تطبيقات ذكية وسهلة الاستخدام لنظامي iOS و Android</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🚀</span>
+                    <h3>التسويق الرقمي</h3>
+                    <p>استراتيجيات تسويقية فعالة لزيادة انتشارك الرقمي</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">⚡</span>
+                    <h3>الأداء والسرعة</h3>
+                    <p>تحسين أداء مواقعك وتطبيقاتك لتجربة مستخدم مثالية</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🔒</span>
+                    <h3>الأمان والحماية</h3>
+                    <p>حلول أمنية متقدمة لحماية بياناتك ومعلوماتك</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="faq" tabindex="-1">
-        <h2>الأسئلة الشائعة</h2>
-        <details class="card">
-          <summary><strong>هل يجب الوضوء لغسل الجنابة؟</strong></summary>
-          <p>لا يجب الوضوء مع غسل الجنابة بل لا يشرع، بخلاف سائر الأغسال.</p>
-          <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/22/1700/" target="_blank" rel="noopener">كيفية الغُسل وأحكامه</a></div>
-        </details>
-        <details class="card">
-          <summary><strong>ماذا أفعل لو شككت في الطهارة؟</strong></summary>
-          <p>من تيقّن الطهارة وشكّ في الحدث بنى على الطهارة، والعكس بالعكس، مع تفاصيل في الكتب.</p>
-          <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720/3616/" target="_blank" rel="noopener">أحكام الخلل</a></div>
-        </details>
-      </section>
-
-      <section id="sources" tabindex="-1">
-        <h2>المراجع (مكتب السيد السيستاني)</h2>
-        <p>هذه الروابط مرجعية للاطلاع والتثبّت، ويُرجى الرجوع إليها عند الحاجة لتفاصيل المسائل:</p>
-        <div class="src-list">
-          <a href="https://www.sistani.org/arabic/book/23720/4782/" target="_blank" rel="noopener">أجزاء الوضوء – منهاج الصالحين</a>
-          <a href="https://www.sistani.org/arabic/book/22/1691/" target="_blank" rel="noopener">أفعال الوضوء – التعليقة</a>
-          <a href="https://www.sistani.org/arabic/book/13/528/" target="_blank" rel="noopener">موارد وجوب الوضوء</a>
-          <a href="https://www.sistani.org/arabic/book/22/1692/" target="_blank" rel="noopener">شرائط الوضوء – التعليقة</a>
-          <a href="https://www.sistani.org/arabic/book/22/1700/" target="_blank" rel="noopener">كيفية الغُسل</a>
-          <a href="https://www.sistani.org/english/book/48/2247/" target="_blank" rel="noopener">مبطلات الصلاة (EN)</a>
-          <a href="https://www.sistani.org/arabic/book/23720" target="_blank" rel="noopener">منهاج الصالحين – فهرس</a>
+    <!-- قسم المعرض -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">معرض أعمالنا</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">مشروع تطبيق التجارة الإلكترونية</div>
+                <div class="gallery-item">موقع شركة تقنية</div>
+                <div class="gallery-item">تطبيق إدارة المهام</div>
+                <div class="gallery-item">منصة تعليمية تفاعلية</div>
+                <div class="gallery-item">موقع مطعم فاخر</div>
+                <div class="gallery-item">تطبيق اللياقة البدنية</div>
+            </div>
         </div>
-        <p class="tip" style="margin-top:.8rem">تنبيه: الموقع للتعلّم والإرشاد، والمرجع النهائي: مكتب سماحة السيد السيستاني دام ظله.</p>
-      </section>
+    </section>
 
-      <footer>
-        <div>© <span id="year"></span> — تعليم الصلاة وفق المذهب الجعفري — تنفيذ واجهة وتعليم تفاعلي.</div>
-      </footer>
-    </div>
-  </main>
-</div>
+    <!-- التذييل -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <h3>تواصل معنا</h3>
+            <div class="social-links">
+                <a href="#">📧</a>
+                <a href="#">📱</a>
+                <a href="#">🌐</a>
+                <a href="#">💼</a>
+            </div>
+            <p>&copy; 2024 جميع الحقوق محفوظة - موقعي الاحترافي</p>
+        </div>
+    </footer>
 
-<script nonce="r4nd0m123">
-(function(){
-  const els = {
-    g: document.getElementById('gregorian'),
-    h: document.getElementById('hijri'),
-    year: document.getElementById('year')
-  };
-  els.year.textContent = new Date().getFullYear();
+    <script>
+        // إنشاء الجسيمات المتحركة
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
 
-  // تمرير سلس للروابط
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const id = a.getAttribute('href').slice(1);
-      const el = document.getElementById(id);
-      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}) }
-    });
-  });
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
 
-  // التاريخ الميلادي (محلي)
-  const d = new Date();
-  const g = d.toLocaleDateString('ar', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
-  els.g.textContent = `التاريخ الميلادي: ${g}`;
+        // تأثير التمرير السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-  // التاريخ الهجري (بدون أي خدمات خارجية)
-  try{
-    const h = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
-      weekday:'long', year:'numeric', month:'long', day:'numeric'
-    }).format(d);
-    els.h.textContent = `التاريخ الهجري: ${h}`;
-  }catch(_){
-    els.h.textContent = "التاريخ الهجري: —";
-  }
-})();
-</script>
+        // تأثير شريط التنقل عند التمرير
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.2)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        });
+
+        // تأثير ظهور العناصر عند التمرير
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // مراقبة العناصر
+        document.querySelectorAll('.service-card, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // تشغيل إنشاء الجسيمات عند تحميل الصفحة
+        window.addEventListener('load', createParticles);
+
+        // تأثير الماوس على الخلفية
+        document.addEventListener('mousemove', function(e) {
+            const shapes = document.querySelectorAll('.shape');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.5;
+                const xPos = x * speed * 50;
+                const yPos = y * speed * 50;
+                shape.style.transform = `translate(${xPos}px, ${yPos}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
