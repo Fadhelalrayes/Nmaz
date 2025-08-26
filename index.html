@@ -1,399 +1,356 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>مدرسة الصلاة وفق المذهب الجعفري</title>
-  <meta name="description" content="تعليم الوضوء والصلاة وفق الفقه الجعفري: خطوات مفصّلة، نصوص الأذان والإقامة، ما يصحّ السجود عليه، مواقيت صلاة بطريقة جامعة طهران، وتاريخ هجري يتحدّث تلقائيًا."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  <style>
+  <title>تعليم الصلاة وفق المذهب الجعفري</title>
+  <meta name="description" content="منصّة أكاديمية تفاعلية لتعليم الصلاة وفق المذهب الجعفري، مع مصادر موثوقة من موقع مكتب السيد السيستاني، وتاريخ هجري/ميلادي ومواقيت الصلاة لتوقيت البحرين." />
+
+  <!-- أمان أساسي لصفحة ثابتة على GitHub Pages -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; style-src 'self' 'nonce-r4nd0m123'; script-src 'self' 'nonce-r4nd0m123'; connect-src 'self' https://api.aladhan.com; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Referrer-Policy" content="no-referrer">
+  <meta http-equiv="Permissions-Policy" content="geolocation=()">
+  <meta name="color-scheme" content="light">
+
+  <style nonce="r4nd0m123">
     :root{
-      --bg:#0f1320; --panel:#171b2b; --text:#eef2ff; --muted:#9aa4c0; --brand:#22c55e; --brand2:#38bdf8; --ring:rgba(56,189,248,.45);
-      --shadow:0 12px 40px rgba(0,0,0,.35); --radius:16px;
+      --bg-grad-1:#F6FAFF; --bg-grad-2:#FDFEFF;
+      --primary:#2B7A78; --primary-50:#D7EFEE; --primary-20:#EFF9F8;
+      --accent:#6EC1E4; --ink:#1C2333; --ink-2:#5A6371; --card:#ffffff;
+      --ring: rgba(43,122,120,.25);
+      --good:#0ea5e9; --warn:#f59e0b;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0; font-family:"Tajawal",system-ui,Arial; background:var(--bg); color:var(--text); line-height:1.8}
-    a{color:var(--brand2); text-decoration:none}
-    a:hover{text-decoration:underline}/* شريط علوي */
-.nav{position:sticky; top:0; z-index:100; backdrop-filter:saturate(140%) blur(10px); background:linear-gradient(180deg, rgba(15,19,32,.92), rgba(15,19,32,.65)); border-bottom:1px solid rgba(148,163,184,.15)}
-.nav .wrap{max-width:1200px; margin:auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
-.brand{display:flex; align-items:center; gap:10px; font-weight:900}
-.brand .logo{width:36px; height:36px; display:grid; place-items:center; background:conic-gradient(from 180deg, var(--brand), var(--brand2)); border-radius:12px; box-shadow:var(--shadow)}
-.nav a.link{padding:8px 10px; border-radius:10px; color:var(--text); font-weight:700}
-.nav a.link:hover{background:rgba(148,163,184,.12)}
-.pill{border:1px solid rgba(148,163,184,.35); padding:6px 10px; border-radius:999px; color:var(--muted); font-weight:700; white-space:nowrap}
-.btn{background:linear-gradient(90deg, var(--brand), var(--brand2)); color:white; border:none; padding:10px 14px; border-radius:12px; font-weight:800; cursor:pointer; box-shadow:0 8px 20px rgba(18,115,187,.35)}
-.btn.ghost{background:transparent; color:var(--text); border:1px solid rgba(148,163,184,.3); box-shadow:none}
-
-.wrap{max-width:1200px; margin:auto; padding:26px 18px}
-.hero{display:grid; grid-template-columns:1.2fr .8fr; gap:22px; align-items:center}
-@media (max-width:992px){.hero{grid-template-columns:1fr}}
-.card{background:var(--panel); border:1px solid rgba(148,163,184,.15); border-radius:var(--radius); box-shadow:var(--shadow)}
-.pad{padding:22px}
-h1{margin:6px 0 10px; font-size:clamp(26px, 3.6vw, 48px); line-height:1.2; font-weight:900}
-h2{margin:0 0 8px; font-size:clamp(22px, 2.4vw, 32px); font-weight:900}
-h3{margin:0 0 8px; font-weight:800}
-.lead{color:var(--muted)}
-
-.grid{display:grid; gap:16px}
-.grid.cols-3{grid-template-columns:repeat(3,1fr)}
-.grid.cols-2{grid-template-columns:repeat(2,1fr)}
-@media (max-width:760px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-
-.steps{display:grid; grid-template-columns:300px 1fr; gap:16px}
-@media (max-width:992px){.steps{grid-template-columns:1fr}}
-.steps .menu{position:sticky; top:74px; align-self:start; border:1px solid rgba(148,163,184,.15); border-radius:14px}
-.steps .menu button{all:unset; display:flex; align-items:center; gap:10px; padding:12px 10px; margin:2px; border-radius:12px; cursor:pointer; font-weight:800}
-.steps .menu button[aria-current="true"]{background:linear-gradient(90deg, rgba(34,197,94,.20), rgba(56,189,248,.15)); box-shadow:0 0 0 4px var(--ring)}
-.steps .panel{display:none}
-.steps .panel[aria-hidden="false"]{display:block; animation:fade .25s ease}
-.num{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:9px; font-weight:900; background:linear-gradient(180deg, var(--brand), var(--brand2)); color:white}
-@keyframes fade{from{opacity:.7; transform:translateY(4px)} to{opacity:1; transform:none}}
-
-table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; border:1px solid rgba(148,163,184,.15)}
-th,td{padding:10px 12px; text-align:center}
-thead th{background:rgba(148,163,184,.12)}
-tbody tr:nth-child(even){background:rgba(148,163,184,.06)}
-
-.note{font-size:14px; color:var(--muted)}
-footer{margin-top:28px; padding:28px 0; border-top:1px solid rgba(148,163,184,.15); color:var(--muted)}
-
-/* مواقيت */
-.times-grid{display:grid; gap:16px; grid-template-columns:1fr 1fr}
-@media (max-width:760px){.times-grid{grid-template-columns:1fr}}
-
-/* أسئلة شائعة & اختبار */
-details{border:1px solid rgba(148,163,184,.15); border-radius:14px; padding:14px 16px; background:var(--panel)}
-summary{cursor:pointer; font-weight:800}
-details+details{margin-top:10px}
-
-.quiz-item{padding:16px; border:1px solid rgba(148,163,184,.15); border-radius:14px; margin:12px 0; background:var(--panel)}
-.quiz-item h4{margin:0 0 8px}
-.quiz-item label{display:block; padding:8px 10px; border-radius:10px; cursor:pointer}
-.quiz-item label:hover{background:rgba(148,163,184,.08)}
-.quiz-result{padding:10px; border-radius:10px; display:inline-block}
-  /* تحسينات للهاتف */
-[id]{scroll-margin-top:72px}
-.nav .wrap{flex-wrap:wrap}
-.nav-links{margin-inline-start:auto; display:flex; gap:8px; flex-wrap:nowrap; overflow-x:auto; padding-bottom:4px}
-.nav-links::-webkit-scrollbar{display:none}
-.btn{min-height:42px}
-.card{margin-bottom:14px}
-.hero{grid-template-columns:1fr}
-.steps{grid-template-columns:1fr}
-.steps .menu{position:relative; top:auto; display:flex; overflow-x:auto; padding:6px}
-.steps .menu button{flex:0 0 auto}
-.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
-.times-grid{grid-template-columns:1fr}
-table{min-width:620px}
-.table-scroll{overflow:auto; -webkit-overflow-scrolling:touch}
-@media (max-width:480px){
-  h1{font-size:28px}
-  h2{font-size:22px}
-  .btn,.btn.ghost{width:100%}
-  .pill{font-size:12px}
-}
-
+    body{
+      margin:0; font-family: system-ui, -apple-system, "Segoe UI", "Noto Naskh Arabic", "Cairo", "IBM Plex Sans Arabic", sans-serif;
+      color:var(--ink);
+      background: linear-gradient(180deg,var(--bg-grad-1),var(--bg-grad-2));
+    }
+    a{color:var(--primary); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:1.2rem}
+    header{
+      background: linear-gradient(90deg, var(--primary-20), #fff);
+      border-bottom:1px solid #e6eef2;
+      position:sticky; top:0; z-index:10;
+    }
+    .head{
+      display:flex; align-items:center; gap:1rem; justify-content:space-between;
+      padding:.6rem 0;
+    }
+    .brand{display:flex; align-items:center; gap:.8rem}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--primary));
+      box-shadow: 0 4px 14px rgba(0,0,0,.1);
+    }
+    .title{margin:0; font-size:1.25rem}
+    .datetimes{
+      display:flex; align-items:center; gap:1.2rem; color:var(--ink-2); font-size:.95rem;
+    }
+    .pill{background:var(--primary-20); padding:.3rem .6rem; border-radius:999px}
+    .times-widget{
+      display:flex; align-items:center; gap:.6rem; font-size:.9rem;
+      color:var(--ink-2);
+    }
+    .times-widget small{opacity:.9}
+    .times-grid{
+      display:grid; grid-template-columns:repeat(6, auto); gap:.5rem; align-items:center;
+      background:#fff; padding:.4rem .6rem; border-radius:12px; border:1px solid #e8eef3;
+    }
+    .badge{
+      background:var(--primary-50); color:var(--ink);
+      padding:.2rem .5rem; border-radius:999px; font-weight:600; font-size:.8rem;
+    }
+    .current{outline: 2px solid var(--good); background:#e0f2fe}
+    main{display:flex; gap:1.2rem; min-height:calc(100vh - 120px)}
+    /* الشريط الجانبي الأيمن (الأزرار على اليمين) */
+    .side-actions{
+      position:sticky; top:88px; align-self:flex-start;
+      display:flex; flex-direction:column; gap:.6rem;
+      width:180px;
+    }
+    .action{
+      display:block; background:var(--card); border:1px solid #e8eef3;
+      border-radius:14px; padding:.7rem .9rem; text-align:center; font-weight:700;
+      box-shadow:0 4px 16px rgba(0,0,0,.04);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .action:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    /* المحتوى */
+    .content{flex:1}
+    section{
+      background:var(--card); border:1px solid #e8eef3; border-radius:18px;
+      padding:1rem; margin-bottom:1rem; box-shadow:0 8px 24px rgba(0,0,0,.05);
+    }
+    section h2{margin-top:.2rem}
+    .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:.8rem}
+    .card{border:1px solid #edf2f6; border-radius:14px; padding:.9rem; background:#fff}
+    .card h3{margin:.2rem 0 .4rem 0; font-size:1rem}
+    .tip{background:#f8fbff; border:1px dashed #d7e7f6; padding:.6rem; border-radius:10px; color:#224}
+    .source{font-size:.85rem; color:var(--ink-2)}
+    /* الفوتر */
+    footer{
+      margin-top:1rem; padding:1rem 0; color:var(--ink-2); font-size:.92rem
+    }
+    .src-list{display:grid; grid-template-columns:repeat(2,1fr); gap:.5rem}
+    /* تجاوب */
+    @media (max-width: 980px){
+      .times-grid{grid-template-columns:repeat(3, auto)}
+      .cards{grid-template-columns:1fr}
+      main{flex-direction:column}
+      .side-actions{position:static; width:auto; flex-direction:row; overflow:auto}
+      .action{white-space:nowrap; flex:1}
+    }
   </style>
 </head>
 <body>
-  <!-- شريط علوي -->
-  <nav class="nav" aria-label="الشريط العلوي">
-    <div class="wrap">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l3 3v2h2l3 3v9h-4v-6H8v6H4v-9l3-3h2V6l3-3z" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<header>
+  <div class="container head" role="banner" aria-label="ترويسة الموقع">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <h1 class="title">تعليم الصلاة وفق المذهب الجعفري</h1>
+    </div>
+
+    <div class="datetimes" aria-live="polite">
+      <div class="pill" id="gregorian">التاريخ الميلادي: ...</div>
+      <div class="pill" id="hijri">التاريخ الهجري: ...</div>
+      <div class="times-widget" title="مواقيت الصلاة (البحرين)">
+        <small>مواقيت اليوم – البحرين (جعفري)</small>
+        <div class="times-grid" id="timesGrid" aria-label="مواقيت الصلاة الصغيرة">
+          <!-- يتم ملؤها برمجياً -->
         </div>
-        <span>مدرسة الصلاة • الجعفري</span>
-      </div>
-      <span id="hijriBadge" class="pill" title="التاريخ الهجري"></span>
-      <div class="nav-links">
-        <a class="link" href="#intro">مقدمة</a>
-        <a class="link" href="#wudu">الوضوء</a>
-        <a class="link" href="#salat">الصلاة</a>
-        <a class="link" href="#adhan">الأذان والإقامة</a>
-        <a class="link" href="#sujud">السجود</a>
-        <a class="link" href="#times">المواقيت</a>
-        <a class="link" href="#faq">الأسئلة</a>
-        <a class="link" href="#quiz">اختبار</a>
-        <button class="btn ghost" onclick="window.print()">طباعة</button>
       </div>
     </div>
-  </nav>  <!-- مقدمة -->  <header id="intro" class="wrap hero">
-    <div>
-      <h1>دليل الصلاة وفق الفقه الجعفري</h1>
-      <p class="lead">الصفحات التالية تجمع الخطوات الأساسية للوضوء والصلاة، نصوص الأذان والإقامة، أحكام السجود، مواقيت الصلاة بطريقة جامعة طهران، مع قسم للأسئلة الشائعة واختبار قصير.</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-        <a class="btn" href="#wudu">البدء من الوضوء</a>
-        <a class="btn ghost" href="#times">الانتقال للمواقيت</a>
-      </div>
-    </div>
-    <div class="card pad">
-      <h3 style="margin-top:0">محتويات الدرس</h3>
-      <ul class="note" style="margin:0">
-        <li>الوضوء: ترتيب الغَسل والمسح، والتنبيهات، والنواقض.</li>
-        <li>الصلاة: الأركان والواجبات، والجهر والإخفات.</li>
-        <li>الأذان والإقامة: النصوص المعتمدة في المذهب.</li>
-        <li>السجود: ما يصحّ السجود عليه وفضل التربة.</li>
-        <li>مواقيت الصلاة: بحسب مرصد جعفري (جامعة طهران).</li>
-      </ul>
-    </div>
-  </header>  <!-- الوضوء -->  <section id="wudu" class="wrap">
-    <h2>الوضوء</h2>
-    <div class="grid cols-3">
-      <div class="card pad">
-        <h3>الخطوات الأساسية</h3>
-        <ol>
-          <li><strong>النيّة</strong>: قربةً إلى الله دون تلفّظ لازم.</li>
-          <li><strong>غسل الوجه</strong>: من قصاص الشعر إلى الذقن عرضًا.</li>
-          <li><strong>غسل اليد اليمنى</strong> ثم اليسرى: من المِرفق نزولًا للأصابع.</li>
-          <li><strong>مسح مقدّم الرأس</strong>: ببلل اليد الباقي من الوضوء.</li>
-          <li><strong>مسح ظاهر القدمين</strong>: من الأصابع إلى المفصل، ببلل اليد لا بماء جديد.</li>
-        </ol>
-        <p class="note">يشترط <strong>الترتيب والموالاة</strong> (عدم الفصل الطويل).</p>
-      </div>
-      <div class="card pad">
-        <h3>أخطاء شائعة</h3>
-        <ul class="note">
-          <li>إدخال ماء جديد للمسح على الرأس أو القدمين.</li>
-          <li>عكس اتجاه غسل اليدين (الصحيح: من المِرفق نزولًا).</li>
-          <li>المسح على أسفل القدم بدل ظاهرها.</li>
-        </ul>
-      </div>
-      <div class="card pad">
-        <h3>نواقض الوضوء</h3>
-        <ul class="note">
-          <li>الخارج من السبيلين (ريح/بول/غائط)، والنوم الغالب على السمع والبصر.</li>
-          <li>الجنابة والحيض والنفاس تُوجِب الغُسل لا الوضوء فقط.</li>
-          <li>يبطل الوضوء بانتفاء شرطه (كعدم الماء أو استحالة استعماله بعد الشروع بلا تيمم صحيح).</li>
-        </ul>
-      </div>
-    </div>
-  </section>  <!-- الصلاة -->  <section id="salat" class="wrap">
-    <h2>كيفية الصلاة اليومية</h2>
-    <div class="card pad" style="margin-bottom:16px">
-      <h3>عدد الركعات</h3>
-      <div class="table-scroll"><table>$1</table></div>
-      <p class="note">يجوز الجمع بين الظهرين وبين العشاءين اختيارًا.</p>
-    </div><div class="steps">
-  <div class="menu" role="tablist" aria-label="قائمة الخطوات">
-    <button role="tab" aria-controls="p1" aria-current="true"><span class="num">1</span> النيّة + التكبيرة</button>
-    <button role="tab" aria-controls="p2"><span class="num">2</span> القراءة</button>
-    <button role="tab" aria-controls="p3"><span class="num">3</span> القنوت</button>
-    <button role="tab" aria-controls="p4"><span class="num">4</span> الركوع</button>
-    <button role="tab" aria-controls="p5"><span class="num">5</span> السجود</button>
-    <button role="tab" aria-controls="p6"><span class="num">6</span> التشهّد والتسليم</button>
   </div>
-  <div class="content">
-    <article id="p1" class="panel card pad" aria-hidden="false">
-      <h3>النيّة + تكبيرة الإحرام</h3>
-      <p>انْوِ الصلاة قربةً إلى الله، ثم قُل قائمًا: «الله أكبر». القيام المتصل بالتكبيرة ركن.</p>
-    </article>
-    <article id="p2" class="panel card pad" aria-hidden="true">
-      <h3>القراءة</h3>
-      <p>الفاتحة ثم سورة كاملة في الركعتين الأوليين. يراعى الجهر/الإخفات كما في الجدول. تُقرأ البسملة قبل السورة.</p>
-    </article>
-    <article id="p3" class="panel card pad" aria-hidden="true">
-      <h3>القنوت</h3>
-      <p>مستحب قبل الركوع من الركعة الثانية، ويجوز الدعاء بأي صيغة مفهومة.</p>
-    </article>
-    <article id="p4" class="panel card pad" aria-hidden="true">
-      <h3>الركوع</h3>
-      <p>يُنحنى حتى تصل الأصابع للركبتين عادةً، والتسبيح ثلاثًا على الأقل: «سبحان ربي العظيم وبحمده».</p>
-    </article>
-    <article id="p5" class="panel card pad" aria-hidden="true">
-      <h3>السجود</h3>
-      <p>سجدتان على ما يصحّ السجود عليه، مع الجلوس بينهما والطمأنينة، والذكر: «سبحان ربي الأعلى وبحمده».</p>
-    </article>
-    <article id="p6" class="panel card pad" aria-hidden="true">
-      <h3>التشهّد والتسليم</h3>
-      <p>بعد السجدتين في الركعة الثانية والأخيرة يُقرأ التشهّد، ثم التسليم بصيغه المأثورة.</p>
-    </article>
-  </div>
+</header>
+
+<div class="container">
+  <main>
+    <!-- الشريط الجانبي الأيمن -->
+    <aside class="side-actions" aria-label="أزرار التصفّح السريعة">
+      <a class="action" href="#start">ابدأ التعلّم</a>
+      <a class="action" href="#purity">الطهارة</a>
+      <a class="action" href="#wudu">الوضوء</a>
+      <a class="action" href="#prayers">الصلوات اليومية</a>
+      <a class="action" href="#mistakes">مبطلات وأخطاء</a>
+      <a class="action" href="#faq">الأسئلة الشائعة</a>
+      <a class="action" href="#sources">المراجع</a>
+    </aside>
+
+    <!-- المحتوى -->
+    <div class="content">
+      <section id="start" tabindex="-1">
+        <h2>مسار تعلّم أكاديمي مبسّط</h2>
+        <p>هذه المنصّة التعليمية تشرح الصلاة وفق المذهب الجعفري بأسلوب واضح وتدريجي، مع الاعتماد على <strong>الموقع الرسمي لمكتب سماحة السيد علي السيستاني</strong> للمسائل الفقهية. بعد كل وحدة تعليمية تجد بطاقة “تحقّق فهم” قصيرة.</p>
+      </section>
+
+      <section id="purity" tabindex="-1">
+        <h2>الطهارة: المدخل الأول للصلاة</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>النية وآداب الطهارة</h3>
+            <p>تُشرع النية والإخلاص لله تعالى، والتحفّظ على طهارة الماء والمكان والبدن.</p>
+            <div class="tip">تلميح: راجع فقرات كتاب الطهارة في “منهاج الصالحين”.</div>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720" target="_blank" rel="noopener">منهاج الصالحين – كتاب الطهارة</a></div>
+          </div>
+          <div class="card">
+            <h3>أنواع الطهارة</h3>
+            <ul>
+              <li><strong>الوضوء</strong> للصلاة ونحوها.</li>
+              <li><strong>الغُسل</strong> بأنواعه (ومنها غسل الجنابة).</li>
+              <li><strong>التيمم</strong> عند تعذّر الماء أو تعسّره.</li>
+            </ul>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720/3619/" target="_blank" rel="noopener">غايات الوضوء</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="wudu" tabindex="-1">
+        <h2>الوضوء (الواجبات بإيجاز)</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>أجزاء الوضوء</h3>
+            <ol>
+              <li>غَسل الوجه.</li>
+              <li>غَسل اليد اليمنى ثم اليسرى من <em>المِرفق إلى أطراف الأصابع</em>.</li>
+              <li>مسح مقدّم الرأس بالرطوبة الباقية.</li>
+              <li>مسح ظاهر القدمين بالرطوبة الباقية.</li>
+            </ol>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720/4782/" target="_blank" rel="noopener">أجزاء الوضوء</a>، <a href="https://www.sistani.org/arabic/book/22/1691/" target="_blank" rel="noopener">التعليقة على العروة الوثقى – أفعال الوضوء</a></div>
+          </div>
+          <div class="card">
+            <h3>شروط مختصرة</h3>
+            <ul>
+              <li>طهارة الماء ومباحيته وإطلاقه.</li>
+              <li>طهارة أعضاء الوضوء حال الغَسل/المسح.</li>
+              <li>الترتيب من الأعلى إلى الأسفل في الغَسل.</li>
+            </ul>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/24/1833/" target="_blank" rel="noopener">الوجيز – الوضوء وشروطه</a>, <a href="https://www.sistani.org/arabic/book/22/1692/" target="_blank" rel="noopener">شرائط الوضوء</a></div>
+          </div>
+          <div class="card">
+            <h3>تذكير عام</h3>
+            <p>يُستحب بعض الآداب كالسواك، وغسل اليدين قبل الاغتراف، والمضمضة والاستنشاق.</p>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/22/1689/" target="_blank" rel="noopener">بعض مستحبات الوضوء</a></div>
+          </div>
+          <div class="card">
+            <h3>متى يجب الوضوء؟</h3>
+            <p>للصلوات الواجبة (عدا صلاة الميت)، ولأجزاء الصلاة المنسية حسب التفصيل، وللطواف الواجب…</p>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/13/528/" target="_blank" rel="noopener">موارد وجوب الوضوء</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="prayers" tabindex="-1">
+        <h2>الصلوات اليومية (فجر، ظهر، عصر، مغرب، عشاء)</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>الخطوات العامة</h3>
+            <ul>
+              <li>النية → تكبيرة الإحرام → القراءة → الركوع → السجودان → التشهّد/التسليم بحسب الركعات.</li>
+              <li>تذكير: الأذان والإقامة مستحبان مؤكدان.</li>
+            </ul>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720" target="_blank" rel="noopener">منهاج الصالحين – كتاب الصلاة</a></div>
+          </div>
+          <div class="card">
+            <h3>تحقّق فهم (قصير)</h3>
+            <p>بعد تعلّمك أركان الصلاة، أجب لنفسك: ماذا تبطل به الصلاة؟ كيف تعالج الشك؟</p>
+            <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/22/1679/" target="_blank" rel="noopener">الصلاة في النجس</a>، <a href="https://www.sistani.org/english/book/48/2247/" target="_blank" rel="noopener">مبطلات الصلاة (EN)</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mistakes" tabindex="-1">
+        <h2>مبطلات وأخطاء شائعة</h2>
+        <div class="card">
+          <ul>
+            <li>انتقاض الطهارة أثناء الصلاة.</li>
+            <li>الإخلال بالترتيب أو الأذكار الواجبة.</li>
+            <li>الجهل بالنجاسة على البدن/الثوب له تفاصيل خاصة.</li>
+          </ul>
+          <div class="source">المصدر: <a href="https://www.sistani.org/english/book/48/2247/" target="_blank" rel="noopener">مبطلات الصلاة</a>, <a href="https://www.sistani.org/arabic/book/22/1679/" target="_blank" rel="noopener">تفصيلات فقهية</a></div>
+        </div>
+      </section>
+
+      <section id="faq" tabindex="-1">
+        <h2>الأسئلة الشائعة</h2>
+        <details class="card">
+          <summary><strong>هل يجب الوضوء لغسل الجنابة؟</strong></summary>
+          <p>لا يجب الوضوء مع غسل الجنابة بل لا يشرع، بخلاف سائر الأغسال.</p>
+          <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/22/1700/" target="_blank" rel="noopener">كيفية الغُسل وأحكامه</a></div>
+        </details>
+        <details class="card">
+          <summary><strong>ماذا أفعل لو شككت في الطهارة؟</strong></summary>
+          <p>من تيقّن الطهارة وشكّ في الحدث بنى على الطهارة، والعكس بالعكس، مع تفاصيل في الكتب.</p>
+          <div class="source">المصدر: <a href="https://www.sistani.org/arabic/book/23720/3616/" target="_blank" rel="noopener">أحكام الخلل</a></div>
+        </details>
+      </section>
+
+      <section id="sources" tabindex="-1">
+        <h2>المراجع (مكتب السيد السيستاني)</h2>
+        <p>هذه الروابط مرجعية للاطلاع والتثبّت، ويُرجى الرجوع إليها عند الحاجة لتفاصيل المسائل:</p>
+        <div class="src-list">
+          <a href="https://www.sistani.org/arabic/book/23720/4782/" target="_blank" rel="noopener">أجزاء الوضوء – منهاج الصالحين</a>
+          <a href="https://www.sistani.org/arabic/book/22/1691/" target="_blank" rel="noopener">أفعال الوضوء – التعليقة</a>
+          <a href="https://www.sistani.org/arabic/book/13/528/" target="_blank" rel="noopener">موارد وجوب الوضوء</a>
+          <a href="https://www.sistani.org/arabic/book/22/1692/" target="_blank" rel="noopener">شرائط الوضوء – التعليقة</a>
+          <a href="https://www.sistani.org/arabic/book/22/1700/" target="_blank" rel="noopener">كيفية الغُسل</a>
+          <a href="https://www.sistani.org/english/book/48/2247/" target="_blank" rel="noopener">مبطلات الصلاة (EN)</a>
+          <a href="https://www.sistani.org/arabic/book/23720" target="_blank" rel="noopener">منهاج الصالحين – فهرس</a>
+        </div>
+        <p class="tip" style="margin-top:.8rem">تنبيه: الموقع للتعلّم والإرشاد، والمرجع النهائي: مكتب سماحة السيد السيستاني دام ظله.</p>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> — تعليم الصلاة وفق المذهب الجعفري — تنفيذ واجهة وتعليم تفاعلي.</div>
+      </footer>
+    </div>
+  </main>
 </div>
 
-  </section>  <!-- الأذان والإقامة -->  <section id="adhan" class="wrap">
-    <h2>الأذان والإقامة</h2>
-    <div class="card pad">
-      <div class="table-scroll"><table>$1</table></div>
-      <p class="note">يُرجع في التفاصيل لفتوى المرجع الذي تُقلّده.</p>
-    </div>
-  </section>  <!-- السجود -->  <section id="sujud" class="wrap">
-    <h2>السجود وما يصحّ السجود عليه</h2>
-    <div class="grid cols-2">
-      <div class="card pad">
-        <h3>الأمور الجائزة</h3>
-        <ul class="note">
-          <li>الأرض وما نبت عليها مما لا يؤكل ولا يُلبس (تراب، حجر، رمل، خشب...).</li>
-          <li>الورق النباتي، الطابوق، الآجر، الجبس.</li>
-        </ul>
-      </div>
-      <div class="card pad">
-        <h3>التربة</h3>
-        <p class="note">السجود على الأرض أصلٌ نبوي، والتربة (قطعة طين/تراب) تُسهِّل الامتثال مع نظافة ويسر. الأفضلية لتربة الحسين (ع).</p>
-      </div>
-    </div>
-  </section>  <!-- المواقيت -->  <section id="times" class="wrap">
-    <h2>مواقيت الصلاة اليوم</h2>
-    <p class="note">طريقة الحساب: <strong>الجعفري – جامعة طهران</strong> عبر خدمة Aladhan (method=7).</p>
-    <div class="times-grid">
-      <div class="card pad">
-        <h3 style="margin-top:0">الموقع</h3>
-        <div class="grid cols-2">
-          <label class="note">خط العرض (°)
-            <input id="lat" type="number" step="0.000001" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(148,163,184,.25); background:var(--panel); color:var(--text)">
-          </label>
-          <label class="note">خط الطول (°)
-            <input id="lng" type="number" step="0.000001" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(148,163,184,.25); background:var(--panel); color:var(--text)">
-          </label>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
-          <button class="btn" id="geoBtn">تحديد موقعي تلقائيًا</button>
-          <button class="btn ghost" id="refreshTimes">تحديث المواقيت</button>
-          <span class="pill">تُحفَظ الإعدادات محليًا</span>
-        </div>
-      </div>
-      <div class="card pad">
-        <h3 style="margin-top:0">الجدول</h3>
-        <div class="table-scroll"><table>$1</table></div>
-      </div>
-    </div>
-  </section>  <!-- الأسئلة الشائعة -->  <section id="faq" class="wrap">
-    <h2>الأسئلة الشائعة</h2>
-    <details>
-      <summary>هل تصح الصلاة دون القنوت؟</summary>
-      <p class="note">نعم، القنوت مستحب وليس واجبًا.</p>
-    </details>
-    <details>
-      <summary>هل يجوز الجمع بين الصلوات؟</summary>
-      <p class="note">يجوز الجمع بين الظهرين وبين العشاءين اختيارًا.</p>
-    </details>
-    <details>
-      <summary>على ماذا أسجد إذا لم تتوفر التربة؟</summary>
-      <p class="note">الأرض وما نبت عليها مما لا يؤكل ولا يُلبس كافٍ، كالخشب والحجر.</p>
-    </details>
-  </section>  <!-- اختبار قصير -->  <section id="quiz" class="wrap">
-    <h2>اختبار سريع</h2>
-    <form id="quizForm">
-      <div class="quiz-item">
-        <h4>1) المسح على الرأس والقدمين يكون ببلل اليد من نفس الوضوء؟</h4>
-        <label><input type="radio" name="q1" value="1"> نعم</label>
-        <label><input type="radio" name="q1" value="0"> لا</label>
-      </div>
-      <div class="quiz-item">
-        <h4>2) «حيّ على خير العمل» موجودة في الأذان؟</h4>
-        <label><input type="radio" name="q2" value="1"> نعم</label>
-        <label><input type="radio" name="q2" value="0"> لا</label>
-      </div>
-      <div class="quiz-item">
-        <h4>3) القنوت واجب في الركعة الثانية؟</h4>
-        <label><input type="radio" name="q3" value="0"> لا، مستحب</label>
-        <label><input type="radio" name="q3" value="1"> نعم، واجب</label>
-      </div>
-      <div class="quiz-item">
-        <h4>4) يصح السجود على السجاد الصناعي؟</h4>
-        <label><input type="radio" name="q4" value="0"> لا، لا يصح</label>
-        <label><input type="radio" name="q4" value="1"> نعم، يصح</label>
-      </div>
-      <button class="btn" type="submit">تحقّق من الإجابات</button>
-      <span id="quizMsg" class="quiz-result note"></span>
-    </form>
-  </section>  <footer class="wrap">
-    <div class="grid cols-2">
-      <div>
-        <strong>© مدرسة الصلاة – نسخة تعليمية</strong>
-        <p class="note">إعداد وبرمجة: <strong>فاضل الريس</strong></p>
-      </div>
-      <div style="text-align:start">
-        <button class="btn ghost" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">▲ للأعلى</button>
-      </div>
-    </div>
-  </footer>  <script>
-    // تبويب الخطوات
-    (function(){
-      const tabs=document.querySelectorAll('.steps .menu [role="tab"]');
-      const panels=document.querySelectorAll('.steps .panel');
-      tabs.forEach(b=>b.addEventListener('click',()=>{
-        tabs.forEach(x=>x.setAttribute('aria-current','false'));
-        panels.forEach(p=>p.setAttribute('aria-hidden','true'));
-        b.setAttribute('aria-current','true');
-        document.getElementById(b.getAttribute('aria-controls')).setAttribute('aria-hidden','false');
-      }));
-    })();
+<script nonce="r4nd0m123">
+(function(){
+  // إعدادات عامة
+  const tz = "Asia/Bahrain"; // البحرين UTC+3 بلا توقيت صيفي
+  const els = {
+    g: document.getElementById('gregorian'),
+    h: document.getElementById('hijri'),
+    timesGrid: document.getElementById('timesGrid'),
+    year: document.getElementById('year')
+  };
+  els.year.textContent = new Date().getFullYear();
 
-    // التاريخ الهجري الصغير (يتحدّث تلقائيًا)
-    (function(){
-      function setHijri(){
-        try{
-          const fmt=new Intl.DateTimeFormat('ar-u-ca-islamic', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
-          document.getElementById('hijriBadge').textContent=fmt.format(new Date());
-        }catch(e){ document.getElementById('hijriBadge').textContent=''; }
+  // تمرير سلس للروابط
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}) }
+    });
+  });
+
+  // جلب المواقيت عبر AlAdhan (طريقة: 0 = Jafari – Ithna Ashari)
+  const city = "Manama";
+  const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city)}&country=Bahrain&method=0&iso8601=true&timezonestring=${encodeURIComponent(tz)}`;
+
+  fetch(url, {cache:'no-store'})
+    .then(r=>r.json())
+    .then(json=>{
+      if(!json || !json.data){ throw new Error('No data'); }
+      const data = json.data;
+      // التاريخ الميلادي/الهجري
+      const g = data.date.readable; // e.g. 26 Aug 2025
+      const h = `${data.date.hijri.day} ${data.date.hijri.month.ar} ${data.date.hijri.year} هـ`;
+      els.g.textContent = `التاريخ الميلادي: ${g}`;
+      els.h.textContent = `التاريخ الهجري: ${h}`;
+
+      // المواقيت (صغير ومنسّق)
+      const t = data.timings;
+      const order = [
+        ["الفجر","Fajr"],
+        ["الشروق","Sunrise"],
+        ["الظهر","Dhuhr"],
+        ["العصر","Asr"],
+        ["المغرب","Maghrib"],
+        ["العشاء","Isha"]
+      ];
+      // تحويل "HH:MM" إلى دقائق منذ منتصف الليل لمقارنة الوقت الحالي
+      const toMin = s=>{
+        const [hh,mm] = s.split(':').map(Number);
+        return hh*60+mm;
+      };
+      const now = new Date();
+      const nowMinutes = now.getHours()*60 + now.getMinutes();
+
+      els.timesGrid.innerHTML = '';
+      order.forEach(([label,key])=>{
+        const v = t[key].split(' ')[0]; // قد يأتي مع (+03)
+        const div = document.createElement('div');
+        div.className = 'badge';
+        div.textContent = `${label}: ${v}`;
+        // تمييز الصلاة الحالية تقريبًا
+        const minutes = toMin(v);
+        if (Math.abs(minutes - nowMinutes) <= 20){ div.classList.add('current'); }
+        els.timesGrid.appendChild(div);
+      });
+    })
+    .catch(err=>{
+      console.warn('Prayer times fetch failed:', err);
+      els.timesGrid.innerHTML = '<small>تعذر تحديث المواقيت الآن.</small>';
+      // تواريخ محلية بديلة
+      const d = new Date();
+      const g = d.toLocaleDateString('ar', {dateStyle:'full'});
+      els.g.textContent = `التاريخ الميلادي: ${g}`;
+      try{
+        const h = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {day:'numeric',month:'long',year:'numeric'}).format(d);
+        els.h.textContent = `التاريخ الهجري: ${h}`;
+      }catch(_){
+        els.h.textContent = "التاريخ الهجري: —";
       }
-      setHijri();
-      // تحديث عند منتصف الليل
-      setInterval(()=>{ const n=new Date(); if(n.getHours()===0 && n.getMinutes()<2){ setHijri(); } }, 60*1000);
-    })();
-
-    // مواقيت الصلاة بطريقة جامعة طهران عبر Aladhan (method=7)
-    (function(){
-      const latEl=document.getElementById('lat');
-      const lngEl=document.getElementById('lng');
-      const K='times-settings-v3';
-      function save(){ localStorage.setItem(K, JSON.stringify({lat:latEl.value, lng:lngEl.value})); }
-      function load(){ try{ const s=JSON.parse(localStorage.getItem(K)||'{}'); if(s.lat) latEl.value=s.lat; if(s.lng) lngEl.value=s.lng; }catch{} }
-
-      async function fetchByCoords(lat,lng){
-        const url=`https://api.aladhan.com/v1/timings?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lng)}&method=7&iso8601=true`;
-        const r=await fetch(url); const j=await r.json(); return j.data; }
-      async function render(){
-        const lat=parseFloat(latEl.value)||26.0667; // المنامة افتراضيًا
-        const lng=parseFloat(lngEl.value)||50.5577;
-        try{
-          const d=await fetchByCoords(lat,lng);
-          const t=d.timings;
-          document.getElementById('tFajr').textContent=t.Fajr;
-          document.getElementById('tSunrise').textContent=t.Sunrise;
-          document.getElementById('tDhuhr').textContent=t.Dhuhr;
-          document.getElementById('tAsr').textContent=t.Asr;
-          document.getElementById('tMaghrib').textContent=t.Maghrib;
-          document.getElementById('tIsha').textContent=t.Isha;
-          save();
-        }catch(e){ console.warn(e); }
-      }
-
-      document.getElementById('refreshTimes').addEventListener('click', render);
-      document.getElementById('geoBtn').addEventListener('click', ()=>{
-        if(!navigator.geolocation) return alert('المتصفح لا يدعم تحديد الموقع');
-        navigator.geolocation.getCurrentPosition(p=>{ latEl.value=p.coords.latitude.toFixed(6); lngEl.value=p.coords.longitude.toFixed(6); render(); }, err=> alert('تعذّر تحديد الموقع: '+err.message));
-      });
-      ['change','input'].forEach(ev=>{ [latEl,lngEl].forEach(el=> el.addEventListener(ev, render)) });
-
-      load(); render();
-    })();
-
-    // الاختبار
-    (function(){
-      const form=document.getElementById('quizForm');
-      const msg=document.getElementById('quizMsg');
-      form.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        const correct={q1:'1', q2:'1', q3:'0', q4:'0'}; let score=0; const total=4;
-        Object.keys(correct).forEach(k=>{ const v=form.querySelector(`[name="${k}"]:checked`); if(v && v.value===correct[k]) score++; });
-        msg.textContent=`النتيجة: ${score} / ${total}`;
-        msg.style.background= score===total ? 'rgba(16,185,129,.15)' : 'rgba(245,158,11,.12)';
-        msg.style.color= score===total ? '#10b981' : '#f59e0b';
-      });
-    })();
-    
-    // جعل جميع الجداول قابلة للتمرير على الهاتف
-    (function(){
-      document.querySelectorAll('table').forEach(tb=>{
-        if(!tb.parentElement.classList.contains('table-scroll')){
-          const w=document.createElement('div'); w.className='table-scroll'; tb.replaceWith(w); w.appendChild(tb);
-        }
-      });
-    })();
-  </script></body>
+    });
+})();
+</script>
+</body>
 </html>
