@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <titleالبناء الحديث | شركة مقاولات متخصصة</title>
+    <title>البناء الحرية - شركة مقاولات متخصصة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -82,10 +82,27 @@
             color: var(--dark-color);
             font-weight: 500;
             transition: var(--transition);
+            padding: 10px 0;
+            position: relative;
         }
         
         .nav-menu a:hover {
             color: var(--secondary-color);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
         }
         
         .cta-button {
@@ -101,6 +118,17 @@
         
         .cta-button:hover {
             background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+        
+        /* قائمة الهامبرجر للجوال */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
         }
         
         /* الهيرو */
@@ -444,17 +472,38 @@
         }
         
         @media (max-width: 768px) {
-            .header-container {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
                 flex-direction: column;
+                background-color: white;
+                width: 80%;
+                height: 100vh;
+                box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                padding: 20px;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .header-container {
                 padding: 15px 0;
             }
             
             .logo {
-                margin-bottom: 15px;
-            }
-            
-            .nav-menu {
-                margin: 15px 0;
+                margin-bottom: 0;
             }
             
             .hero h2 {
@@ -471,21 +520,17 @@
         }
         
         @media (max-width: 576px) {
-            .nav-menu {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-menu li {
-                margin: 10px 0;
-            }
-            
             .footer-container {
                 grid-template-columns: 1fr;
             }
             
             .hero {
                 padding: 120px 0 80px;
+            }
+            
+            .cta-button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -495,9 +540,14 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <h1>البناء الحديث</h1>
+                <h1>البناء الحرية</h1>
             </div>
-            <ul class="nav-menu">
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">الرئيسية</a></li>
                 <li><a href="#about">عن الشركة</a></li>
                 <li><a href="#services">خدماتنا</a></li>
@@ -511,7 +561,7 @@
     <!-- قسم الهيرو -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>شركة البناء الحديث للمقاولات</h2>
+            <h2>شركة البناء الحرية للمقاولات</h2>
             <p>نقدم حلولاً إنشائية متكاملة تجمع بين الجودة والدقة والابتكار في تنفيذ المشاريع السكنية والتجارية والصناعية</p>
             <button class="cta-button">اكتشف المزيد</button>
         </div>
@@ -522,7 +572,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>خدماتنا</h2>
-                <p>نقدم مجموعة متكاملة من خدمات البناء والتشييد بأعلى معايير الجودة</p>
+                <p>تقدم مجموعة متكاملة من خدمات البناء والتشييد بأعلى معايير الجودة</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -598,7 +648,7 @@
                 </div>
                 <div class="about-text">
                     <h2>من نحن</h2>
-                    <p>شركة البناء الحديث هي شركة مقاولات رائدة تأسست عام 2005، متخصصة في تقديم حلول إنشائية متكاملة لمشاريع البناء بمختلف أحجامها وتعقيداتها. نحن نلتزم بأعلى معايير الجودة والسلامة ونعتمد على أحدث التقنيات في مجال البناء.</p>
+                    <p>شركة البناء الحرية هي شركة مقاولات رائدة تأسست عام 2005، متخصصة في تقديم حلول إنشائية متكاملة لمشاريع البناء بمختلف أحجامها وتعقيداتها. نحن نلتزم بأعلى معايير الجودة والسلامة ونعتمد على أحدث التقنيات في مجال البناء.</p>
                     <p>يضم فريقنا نخبة من المهندسين والخبراء في مختلف التخصصات الهندسية، مما يمكننا من تنفيذ مشاريعنا بدقة عالية وفي الوقت المحدد.</p>
                     <div class="stats">
                         <div class="stat-item">
@@ -656,7 +706,7 @@
                         </div>
                         <div>
                             <h3>البريد الإلكتروني</h3>
-                            <p>info@modernbuilding.com</p>
+                            <p>info@al-benaa.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -699,7 +749,7 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>البناء الحديث</h3>
+                    <h3>البناء الحرية</h3>
                     <p>شركة رائدة في مجال المقاولات والبناء، نقدم حلولاً إنشائية متكاملة تجمع بين الجودة والدقة والابتكار.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -738,7 +788,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2023 شركة البناء الحديث. جميع الحقوق محفوظة.</p>
+                <p>© 2023 شركة البناء الحرية. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
@@ -783,6 +833,34 @@
                 contactForm.reset();
             });
         }
+        
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            
+            // تغيير الأيقونة عند النقر
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
     </script>
 </body>
 </html>
