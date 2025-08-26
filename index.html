@@ -26,6 +26,8 @@
       margin:0; font-family: system-ui, -apple-system, "Segoe UI", "Noto Naskh Arabic", "Cairo", "IBM Plex Sans Arabic", sans-serif;
       color:var(--ink);
       background: linear-gradient(180deg,var(--bg-grad-1),var(--bg-grad-2));
+      /* مساحة افتراضية أسفل المحتوى تُستبدَل في الجوال داخل الميديا كويري */
+      padding-bottom: 0;
     }
     a{color:var(--primary); text-decoration:none}
     a:hover{text-decoration:underline}
@@ -50,8 +52,10 @@
       display:flex; align-items:center; gap:1.2rem; color:var(--ink-2); font-size:.95rem;
     }
     .pill{background:var(--primary-20); padding:.3rem .6rem; border-radius:999px}
+
     main{display:flex; gap:1.2rem; min-height:calc(100vh - 120px)}
-    /* الشريط الجانبي الأيمن (الأزرار على اليمين) */
+
+    /* الشريط الجانبي الأيمن (أزرار على اليمين لسطح المكتب) */
     .side-actions{
       position:sticky; top:88px; align-self:flex-start;
       display:flex; flex-direction:column; gap:.6rem; width:180px;
@@ -63,6 +67,7 @@
       transition:transform .15s ease, box-shadow .15s ease;
     }
     .action:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+
     /* المحتوى */
     .content{flex:1}
     section{
@@ -77,12 +82,30 @@
     .source{font-size:.85rem; color:var(--ink-2)}
     footer{margin-top:1rem; padding:1rem 0; color:var(--ink-2); font-size:.92rem}
     .src-list{display:grid; grid-template-columns:repeat(2,1fr); gap:.5rem}
-    /* تجاوب */
+
+    /* الجوال: الأزرار تتحول إلى شريط سفلي ثابت لا يتداخل مع المتصفح */
     @media (max-width: 980px){
+      /* نرفع المحتوى لأعلى حتى لا يحجبه الشريط السفلي */
+      body{ padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+
       .cards{grid-template-columns:1fr}
       main{flex-direction:column}
-      .side-actions{position:static; width:auto; flex-direction:row; overflow:auto}
-      .action{white-space:nowrap; flex:1}
+
+      .side-actions{
+        position:fixed; inset:auto 0 0 0; /* left:0; right:0; bottom:0 */
+        top:auto; z-index:50;
+        flex-direction:row; gap:.5rem; width:auto;
+        padding: .5rem calc(.6rem + env(safe-area-inset-right, 0px)) calc(.5rem + env(safe-area-inset-bottom, 0px)) calc(.6rem + env(safe-area-inset-left, 0px));
+        background:rgba(255,255,255,.92);
+        backdrop-filter: blur(8px);
+        border-top:1px solid #e6eef2;
+        overflow-x:auto; overflow-y:hidden;
+      }
+      .action{
+        flex:0 0 auto; white-space:nowrap;
+        border-radius:999px; padding:.55rem .9rem;
+        box-shadow:none;
+      }
     }
   </style>
 </head>
@@ -94,7 +117,7 @@
       <h1 class="title">تعليم الصلاة وفق المذهب الجعفري</h1>
     </div>
 
-    <!-- التاريخين فقط، بلا مواقيت -->
+    <!-- التاريخين فقط -->
     <div class="datetimes" aria-live="polite">
       <div class="pill" id="gregorian">التاريخ الميلادي: ...</div>
       <div class="pill" id="hijri">التاريخ الهجري: ...</div>
@@ -104,8 +127,8 @@
 
 <div class="container">
   <main>
-    <!-- الشريط الجانبي الأيمن -->
-    <aside class="side-actions" aria-label="أزرار التصفّح السريعة">
+    <!-- الأزرار: يمين في الديسكتوب / شريط سفلي ثابت في الجوال -->
+    <aside class="side-actions" aria-label="التنقل السريع">
       <a class="action" href="#start">ابدأ التعلّم</a>
       <a class="action" href="#purity">الطهارة</a>
       <a class="action" href="#wudu">الوضوء</a>
@@ -115,11 +138,10 @@
       <a class="action" href="#sources">المراجع</a>
     </aside>
 
-    <!-- المحتوى -->
     <div class="content">
       <section id="start" tabindex="-1">
         <h2>مسار تعلّم أكاديمي مبسّط</h2>
-        <p>هذه المنصّة التعليمية تشرح الصلاة وفق المذهب الجعفري بأسلوب واضح وتدريجي، مع الاعتماد على <strong>الموقع الرسمي لمكتب سماحة السيد علي السيستاني</strong> للمسائل الفقهية. بعد كل وحدة تعليمية تجد بطاقة “تحقّق فهم” قصيرة.</p>
+        <p>هذه المنصّة التعليمية تشرح الصلاة وفق المذهب الجعفري بأسلوب واضح وتدريجي، مع الاعتماد على <strong>الموقع الرسمي لمكتب سماحة السيد علي السيستاني</strong> للمسائل الفقهية.</p>
       </section>
 
       <section id="purity" tabindex="-1">
@@ -268,7 +290,7 @@
   const g = d.toLocaleDateString('ar', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
   els.g.textContent = `التاريخ الميلادي: ${g}`;
 
-  // التاريخ الهجري عبر Intl Islamic Calendar (بدون أي خدمات خارجية)
+  // التاريخ الهجري (بدون أي خدمات خارجية)
   try{
     const h = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
       weekday:'long', year:'numeric', month:'long', day:'numeric'
