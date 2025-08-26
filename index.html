@@ -74,6 +74,27 @@ details+details{margin-top:10px}
 .quiz-item label{display:block; padding:8px 10px; border-radius:10px; cursor:pointer}
 .quiz-item label:hover{background:rgba(148,163,184,.08)}
 .quiz-result{padding:10px; border-radius:10px; display:inline-block}
+  /* تحسينات للهاتف */
+[id]{scroll-margin-top:72px}
+.nav .wrap{flex-wrap:wrap}
+.nav-links{margin-inline-start:auto; display:flex; gap:8px; flex-wrap:nowrap; overflow-x:auto; padding-bottom:4px}
+.nav-links::-webkit-scrollbar{display:none}
+.btn{min-height:42px}
+.card{margin-bottom:14px}
+.hero{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr}
+.steps .menu{position:relative; top:auto; display:flex; overflow-x:auto; padding:6px}
+.steps .menu button{flex:0 0 auto}
+.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+.times-grid{grid-template-columns:1fr}
+table{min-width:620px}
+.table-scroll{overflow:auto; -webkit-overflow-scrolling:touch}
+@media (max-width:480px){
+  h1{font-size:28px}
+  h2{font-size:22px}
+  .btn,.btn.ghost{width:100%}
+  .pill{font-size:12px}
+}
 
   </style>
 </head>
@@ -88,7 +109,7 @@ details+details{margin-top:10px}
         <span>مدرسة الصلاة • الجعفري</span>
       </div>
       <span id="hijriBadge" class="pill" title="التاريخ الهجري"></span>
-      <div style="margin-inline-start:auto; display:flex; gap:8px; flex-wrap:wrap">
+      <div class="nav-links">
         <a class="link" href="#intro">مقدمة</a>
         <a class="link" href="#wudu">الوضوء</a>
         <a class="link" href="#salat">الصلاة</a>
@@ -154,16 +175,7 @@ details+details{margin-top:10px}
     <h2>كيفية الصلاة اليومية</h2>
     <div class="card pad" style="margin-bottom:16px">
       <h3>عدد الركعات</h3>
-      <table>
-        <thead><tr><th>الصلاة</th><th>الركعات</th><th>الجهر/الإخفات</th></tr></thead>
-        <tbody>
-          <tr><td>الصبح</td><td>٢</td><td>جهر</td></tr>
-          <tr><td>الظهر</td><td>٤</td><td>إخفات</td></tr>
-          <tr><td>العصر</td><td>٤</td><td>إخفات</td></tr>
-          <tr><td>المغرب</td><td>٣</td><td>جهر</td></tr>
-          <tr><td>العشاء</td><td>٤</td><td>جهر</td></tr>
-        </tbody>
-      </table>
+      <div class="table-scroll"><table>$1</table></div>
       <p class="note">يجوز الجمع بين الظهرين وبين العشاءين اختيارًا.</p>
     </div><div class="steps">
   <div class="menu" role="tablist" aria-label="قائمة الخطوات">
@@ -205,21 +217,7 @@ details+details{margin-top:10px}
   </section>  <!-- الأذان والإقامة -->  <section id="adhan" class="wrap">
     <h2>الأذان والإقامة</h2>
     <div class="card pad">
-      <table>
-        <thead><tr><th>العبارة</th><th>الأذان</th><th>الإقامة</th></tr></thead>
-        <tbody>
-          <tr><td>الله أكبر</td><td>٤</td><td>٢</td></tr>
-          <tr><td>أشهد أن لا إله إلا الله</td><td>٢</td><td>٢</td></tr>
-          <tr><td>أشهد أن محمدًا رسول الله</td><td>٢</td><td>٢</td></tr>
-          <tr><td>أشهد أن عليًّا وليّ الله <span class="note">(بقصد القربة لا الجزئية)</span></td><td>٢</td><td>٢</td></tr>
-          <tr><td>حيّ على الصلاة</td><td>٢</td><td>٢</td></tr>
-          <tr><td>حيّ على الفلاح</td><td>٢</td><td>٢</td></tr>
-          <tr><td>حيّ على خير العمل</td><td>٢</td><td>٢</td></tr>
-          <tr><td>قد قامت الصلاة</td><td>–</td><td>٢</td></tr>
-          <tr><td>الله أكبر</td><td>٢</td><td>٢</td></tr>
-          <tr><td>لا إله إلا الله</td><td>١</td><td>١</td></tr>
-        </tbody>
-      </table>
+      <div class="table-scroll"><table>$1</table></div>
       <p class="note">يُرجع في التفاصيل لفتوى المرجع الذي تُقلّده.</p>
     </div>
   </section>  <!-- السجود -->  <section id="sujud" class="wrap">
@@ -259,17 +257,7 @@ details+details{margin-top:10px}
       </div>
       <div class="card pad">
         <h3 style="margin-top:0">الجدول</h3>
-        <table>
-          <thead><tr><th>الفجر</th><th>الشروق</th><th>الظهر</th><th>العصر</th><th>المغرب</th><th>العشاء</th></tr></thead>
-          <tbody><tr>
-            <td id="tFajr">–:–</td>
-            <td id="tSunrise">–:–</td>
-            <td id="tDhuhr">–:–</td>
-            <td id="tAsr">–:–</td>
-            <td id="tMaghrib">–:–</td>
-            <td id="tIsha">–:–</td>
-          </tr></tbody>
-        </table>
+        <div class="table-scroll"><table>$1</table></div>
       </div>
     </div>
   </section>  <!-- الأسئلة الشائعة -->  <section id="faq" class="wrap">
@@ -396,6 +384,15 @@ details+details{margin-top:10px}
         msg.textContent=`النتيجة: ${score} / ${total}`;
         msg.style.background= score===total ? 'rgba(16,185,129,.15)' : 'rgba(245,158,11,.12)';
         msg.style.color= score===total ? '#10b981' : '#f59e0b';
+      });
+    })();
+    
+    // جعل جميع الجداول قابلة للتمرير على الهاتف
+    (function(){
+      document.querySelectorAll('table').forEach(tb=>{
+        if(!tb.parentElement.classList.contains('table-scroll')){
+          const w=document.createElement('div'); w.className='table-scroll'; tb.replaceWith(w); w.appendChild(tb);
+        }
       });
     })();
   </script></body>
