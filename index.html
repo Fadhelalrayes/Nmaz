@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatelet Contracting - شركة مقاولات متخصصة</title>
+    <title>شاتليت للمقاولات - شركة مقاولات متخصصة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -106,19 +106,27 @@
         }
         
         .cta-button {
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color), #e67e22);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 500;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 159, 67, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .cta-button:hover {
-            background-color: #e67e22;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 159, 67, 0.4);
+        }
+        
+        .cta-button i {
+            font-size: 1.1rem;
         }
         
         /* قائمة الهامبرجر للجوال */
@@ -588,7 +596,7 @@
             }
             
             .cta-button {
-                padding: 8px 16px;
+                padding: 10px 20px;
                 font-size: 0.9rem;
             }
             
@@ -607,7 +615,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <h1>Chatelet Contracting</h1>
+                <h1>شاتليت للمقاولات</h1>
             </div>
             
             <button class="hamburger" id="hamburger">
@@ -621,7 +629,9 @@
                 <li><a href="#projects">مشاريعنا</a></li>
                 <li><a href="#contact">اتصل بنا</a></li>
             </ul>
-            <button class="cta-button">طلب استشارة</button>
+            <button class="cta-button">
+                <i class="fas fa-headset"></i> طلب استشارة
+            </button>
         </div>
     </header>
 
@@ -633,9 +643,11 @@
     <!-- قسم الهيرو -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>Chatelet Contracting</h2>
+            <h2>شاتليت للمقاولات</h2>
             <p>شركة مقاولات متخصصة في تقديم حلول إنشائية متكاملة تجمع بين الجودة والدقة والابتكار في تنفيذ المشاريع السكنية والتجارية والصناعية</p>
-            <button class="cta-button">اكتشف المزيد</button>
+            <button class="cta-button">
+                <i class="fas fa-lightbulb"></i> اكتشف المزيد
+            </button>
         </div>
     </section>
 
@@ -720,7 +732,7 @@
                 </div>
                 <div class="about-text">
                     <h2>من نحن</h2>
-                    <p>شركة Chatelet Contracting هي شركة مقاولات رائدة متخصصة في تقديم حلول إنشائية متكاملة لمشاريع البناء بمختلف أحجامها وتعقيداتها. نحن نلتزم بأعلى معايير الجودة والسلامة ونعتمد على أحدث التقنيات في مجال البناء.</p>
+                    <p>شركة شاتليت للمقاولات هي شركة مقاولات رائدة متخصصة في تقديم حلول إنشائية متكاملة لمشاريع البناء بمختلف أحجامها وتعقيداتها. نحن نلتزم بأعلى معايير الجودة والسلامة ونعتمد على أحدث التقنيات في مجال البناء.</p>
                     <p>يضم فريقنا نخبة من المهندسين والخبراء في مختلف التخصصات الهندسية، مما يمكننا من تنفيذ مشاريعنا بدقة عالية وفي الوقت المحدد.</p>
                     
                     <div class="director-info">
@@ -822,7 +834,9 @@
                             <label for="message">الرسالة</label>
                             <textarea id="message" class="form-control" required></textarea>
                         </div>
-                        <button type="submit" class="cta-button">إرسال الرسالة</button>
+                        <button type="submit" class="cta-button">
+                            <i class="fas fa-paper-plane"></i> إرسال الرسالة
+                        </button>
                     </form>
                 </div>
             </div>
@@ -834,7 +848,7 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>Chatelet Contracting</h3>
+                    <h3>شاتليت للمقاولات</h3>
                     <p>شركة رائدة في مجال المقاولات والبناء، نقدم حلولاً إنشائية متكاملة تجمع بين الجودة والدقة والابتكار.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/chatelet7" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -856,7 +870,7 @@
                     <h3>خدماتنا</h3>
                     <ul>
                         <li><a href="#">بناء وتشييد</a></li>
-                        <li><a href="#">تخطيط وتصamيم</a></li>
+                        <li><a href="#">تخطيط وتصميم</a></li>
                         <li><a href="#">ترميم وتجديد</a></li>
                         <li><a href="#">إدارة المشاريع</a></li>
                         <li><a href="#">استشارات هندسية</a></li>
@@ -867,12 +881,14 @@
                     <p>اشترك في النشرة البريدية ليصلك كل جديد عن خدماتنا ومشاريعنا.</p>
                     <form>
                         <input type="email" class="form-control" placeholder="بريدك الإلكتروني" required>
-                        <button type="submit" class="cta-button" style="margin-top: 10px; width: 100%;">اشترك الآن</button>
+                        <button type="submit" class="cta-button" style="margin-top: 10px; width: 100%;">
+                            <i class="fas fa-envelope"></i> اشترك الآن
+                        </button>
                     </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2023 Chatelet Contracting. جميع الحقوق محفوظة.</p>
+                <p>© 2023 شاتليت للمقاولات. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
